@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Book Ticket for {{ train.name }}</h2>
+<form method="post">
+   {% csrf_token %}
+   <label for="first_name">First Name:</label>
+   <input type="text" id="first_name" name="first_name" required><br>
+   <label for="last_name">Last Name:</label>
+   <input type="text" id="last_name" name="last_name" required><br>
+   <label for="gender">Gender:</label>
+   <select id="gender" name="gender" required>
+       <option value="Male">Male</option>
+       <option value="Female">Female</option>
+   </select><br>
+   <input type="date" id="journey_date" name="journey_date" required><br>
+   <label for="journey_date">Journey Date:</label>
+   <label for="travel_class">Class:</label>
+   <select id="travel_class" name="travel_class" required>
+       <option value="Sleeper">Sleeper</option>
+       <option value="3AC">Third AC</option>
+       <option value="2AC">Second AC</option>
+       <option value="1AC">First AC</option>
+   </select><br>
+   <button type="submit">Book Ticket</button>
+</form>
+{% endblock %}

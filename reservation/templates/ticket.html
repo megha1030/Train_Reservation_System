@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Ticket Confirmation</h2>
+<p>Thank you for booking your ticket.</p>
+<p><strong>Ticket ID:</strong> {{ ticket.id }}</p>
+<p><strong>Train:</strong> {{ ticket.train.name }}</p>
+<p><strong>Name:</strong> {{ ticket.first_name }} {{ ticket.last_name }}</p>
+<p><strong>Gender:</strong> {{ ticket.gender }}</p>
+<p><strong>Class:</strong> {{ ticket.travel_class }}</p>
+<p><strong>Price:</strong> ₹{{ ticket.price }}</p>
+<p><strong>Booking Date:</strong> {{ ticket.journey_date }}</p>
+<p><strong>Booking Date:</strong> {{ ticket.booking_date }}</p>
+{% endblock %}

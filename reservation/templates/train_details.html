@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Train Details</h2>
+<table>
+   <thead>
+       <tr>
+           <th>Train Name</th>
+           <th>Start</th>
+           <th>End</th>
+           <th>Departure</th>
+           <th>Arrival</th>
+           <th>Book Ticket</th>
+       </tr>
+   </thead>
+   <tbody>
+       {% for train in trains %}
+       <tr>
+           <td>{{ train.name }}</td>
+           <td>{{ train.start }}</td>
+           <td>{{ train.end }}</td>
+           <td>{{ train.departure_time }}</td>
+           <td>{{ train.arrival_time }}</td>
+           <td><a href="{% url 'book_ticket' train.id %}">Book</a></td>
+       </tr>
+       {% endfor %}
+   </tbody>
+</table>
+{% endblock %}

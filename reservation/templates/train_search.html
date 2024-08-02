@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to the Train Reservation System</h1>
+<form action="{% url 'train_details' %}" method="get">
+    <label for="source">Source:</label>
+    <select id="source" name="source">
+        <option value="">Select Source City</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Bangalore">Bangalore</option>
+    </select><br>
+    <label for="destination">Destination:</label>
+    <select id="destination" name="destination">
+        <option value="">Select Destination City</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Bangalore">Bangalore</option>
+    </select><br>
+    <button type="submit">Search Trains</button>
+</form>
+{% endblock %}

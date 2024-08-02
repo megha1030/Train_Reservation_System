@@ -1,0 +1,36 @@
+<!-- myapp/templates/bookings.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="ticket">
+    <h2>My Bookings</h2>
+    {% if user_tickets %}
+        <table>
+            <tr>
+                <th>Train</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Class</th>
+                <th>Booking_Date</th>
+                <th>Journey_Date</th>
+
+                <th>Price</th>
+            </tr>
+            {% for ticket in user_tickets %}
+                <tr>
+                    <td>{{ ticket.train.name }}</td>
+                    <td>{{ ticket.train.start }}</td>
+                    <td>{{ ticket.train.end }}</td>
+                    <td>{{ ticket.travel_class }}</td>
+                    <td>{{ ticket.booking_date }}</td>
+                    <td>{{ ticket.journey_date }}</td>
+                    <td>{{ ticket.price }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No tickets booked.</p>
+    {% endif %}
+</div>
+{% endblock %}
